@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <link type="text/css" rel="stylesheet" href="meta-css.css">
+    <script>
+        let selectElem = document.getElementById('webdevlist');
+        selectElem.addEventListener('change', function(){
+            let codeValue = selectElem.value;
+            console.log(codeValue);
+        })
+    </script>
     
 </head>
 <body>
@@ -27,6 +34,13 @@
             <li>Without JavaScript nothing on the page responds dynamically to user actions.</li>
         </ul>
     </div>
+    <label for="webdevlist">Choose One:</label>
+    <select name="code" id="webdevlist">
+        <option>Choose One:</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+    </select>
 </div>
 
 </body>
