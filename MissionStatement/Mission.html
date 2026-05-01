@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <title>BYU-Idaho Mission Statement</title>
     <link type="text/css" rel="stylesheet" href="CSS/MissionStatement.css">
-
+    <script src="Mission.js" defer></script>
 </head>
 
 <body>
+
+<h1>Pick a Theme</h1>
+
+<select id="theme-select">
+    <option>Choose Mode</option>
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+</select>
+
 <div class="page">
     <h1>MISSION STATEMENT</h1>
+
     <div class="subtitle">BRIGHAM YOUNG UNIVERSITY–IDAHO</div>
 
     <div class="content">
@@ -37,8 +47,11 @@
     </div>
 
     <div class="footer">
-        <img src="https://wddbyui.github.io/wdd131/images/byui-logo-blue.webp" alt="BYUI Logo">
+        <img id="logo"
+             src="https://wddbyui.github.io/wdd131/images/byui-logo-blue.webp"
+             alt="BYUI Logo">
     </div>
 </div>
+
 </body>
 </html>

@@ -63,7 +63,7 @@ li {
     letter-spacing: 3px;
     margin-top: -5px;
 }
-.img {
+img {
     width: 75px;   /* adjust size */
     height: auto;   /* keeps proportions */
 }
