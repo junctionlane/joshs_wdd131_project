@@ -1,0 +1,148 @@
+﻿/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #444;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 2px solid #d8b38c;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+    padding: 15px 30px;
+    border-bottom: 2px solid #d8b38c;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b22222;
+    font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    text-decoration: underline;
+}
+
+/* ---------- MAIN ---------- */
+
+main {
+    padding: 30px;
+}
+
+/* ---------- BLOG POST GRID ---------- */
+
+.blog-post {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* ---------- BOOK DETAILS ---------- */
+
+.book-details {
+    text-align: center;
+    color: #444;
+}
+
+.book-details p {
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: goldenrod;
+}
+
+/* ---------- BOOK CONTENT ---------- */
+
+.book-content {
+    text-align: center;
+}
+
+.book-content h2 {
+    font-family: 'Merriweather', serif;
+    color: #b22222;
+    margin-bottom: 20px;
+}
+
+.book-content img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.book-content p {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #d8b38c;
+}
+
+/* ---------- LARGE SCREEN LAYOUT ---------- */
+
+@media screen and (min-width: 700px) {
+
+    .blog-post {
+        grid-template-columns: 180px 1fr;
+        align-items: start;
+    }
+
+    .book-details {
+        text-align: right;
+        border-right: 1px solid #ddd;
+        padding-right: 20px;
+    }
+
+    .book-content {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .book-content p {
+        margin: 0;
+    }
+}
