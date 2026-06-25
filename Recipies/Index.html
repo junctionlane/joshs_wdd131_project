@@ -40,42 +40,20 @@
 
 <main>
 
-    <section class="search">
-        <input type="text" placeholder="Find a recipe">
-        <button>
-            <img src="images/search.svg" alt="Search">
-        </button>
-    </section>
+    <main>
 
-    <article class="recipe-card">
+        <section class="search">
+            <input id="search" type="text" placeholder="Find a recipe">
 
-        <img src="images/apple-crisp.jpg" alt="Apple Crisp">
+            <button id="searchBtn">
+                <img src="images/search.svg" alt="Search">
+            </button>
+        </section>
 
-        <div class="recipe-info">
-
-            <span class="tag">dessert</span>
-
-            <h2>Apple Crisp</h2>
-
-            <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true">⭐</span>
-                    <span aria-hidden="true">⭐</span>
-                    <span aria-hidden="true">⭐</span>
-                    <span aria-hidden="true">⭐</span>
-                    <span aria-hidden="true">☆</span>
-                </span>
-
-            <p class="description">
-                This apple crisp recipe is a simple yet delicious fall
-                dessert that's great served warm with vanilla ice cream.
-            </p>
-
-        </div>
-
-    </article>
+        <div id="recipe-container"></div>
+        <script src="JavaScript/recipes.js"></script>
+        <script src="JavaScript/script.js"></script>
+    </main>
 
 </main>
 
