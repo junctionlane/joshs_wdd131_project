@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive page with recipies that are nice and homey.">
+
+    <title>Joshua Lane's Art Nook</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Art Nook">
+    <meta property="og:description" content="Browse and vote on cool artwork finishished and unfinished">
+    <meta property="og:url" content="https://yourgithubusername.github.io/wdd131/recipes/">
+    <meta property="og:image" content="images/social-preview-image.png">
+
+    <!-- X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joshua Lanes Art Nook">
+    <meta name="twitter:description" content="Browse delicious recipes including Apple Crisp and more.">
+    <meta name="twitter:image" content="images/social-preview-image.png">
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Css/styles.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+
+</head>
+<body>
+
+<header>
+    <img src="FinalProjectImage/Neon.png" alt="Recipe Book Logo">
+    <h1>Joshua Lane's Art Nook</h1>
+    <nav>
+        <a href="HomePage.html">Home</a>
+        <a href="app-plan.html">Unfinished</a>
+    </nav>
+    
+</header>
+
+<main>
+
+    <section class="search">
+        <input id="search" type="text" placeholder="Find some artwork">
+
+        <button id="searchBtn">
+            <img src="FinalProjectImage/search.svg" alt="Search">
+        </button>
+    </section>
+
+    <div id="recipe-container"></div>
+
+    <div>
+        <model-viewer
+                class="project-model"
+                src="models/Grimlock.glb"
+                alt="Grimlock"
+                auto-rotate
+                camera-controls>
+        </model-viewer>
+    </div>
+
+    <script src="JavaScript/recipes.js"></script>
+    <script src="JavaScript/script.js"></script>
+
+</main>
+
+<footer>
+    
+
+    <a href="https://www.flaticon.com/free-icons/recipe"
+       title="recipe icons">
+        Recipe icons created by Freepik - Flaticon
+    </a>
+
+    <div class="social">
+        <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
+        <a href="#"><img src="FinalProjectImage/instagram_icon.svg" alt="instagram icon"></a>
+        <a href="https://www.youtube.com/channel/UC7m5Qr2xuFMM8el-kSkXwIg"><img src="FinalProjectImage/youtube_icon.svg" alt="youtube icon"></a>
+        <a href="#"><img src="FinalProjectImage/pinterest_icon.svg" alt="pinterest icon"></a>
+    </div>
+
+</footer>
+
+</body>
+</html>
