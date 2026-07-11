@@ -1,4 +1,4 @@
-﻿const artworkprojects = [
+﻿artworkprojects = [
     {
         author: 'Provo High Culinary Students',
         url: '',
