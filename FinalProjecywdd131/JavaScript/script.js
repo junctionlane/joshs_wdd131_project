@@ -29,7 +29,18 @@ function recipeTemplate(recipe) {
     return `
     <article class="recipe-card">
 
-        <img src="${recipe.image}" alt="${recipe.name}">
+        ${recipe.model
+        ? `
+            <model-viewer
+                class="project-model"
+                src="${recipe.model}"
+                alt="${recipe.name}"
+                camera-controls
+                auto-rotate>
+            </model-viewer>
+            `
+        : `<img src="${recipe.image}" alt="${recipe.name}">`
+    }
 
         <div class="recipe-info">
 

@@ -28,6 +28,10 @@ nav a:hover {
     color: yellow;
     background-color: var(--nav-hover-background-color);
 }
+.project-model {
+    width: 100%;
+    height: 300px;
+}
 
 body {
     max-width: 1000px;
