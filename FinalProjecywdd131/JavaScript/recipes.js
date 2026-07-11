@@ -20,7 +20,7 @@
             'Cook until golden brown in a waffle iron. Serve with butter and Wilted Greens or Honey.'
         ],
         recipeYield: '6 waffles',
-        rating: 5,
+        rating: 0,
         votes: 0
     },
     {
@@ -44,7 +44,7 @@
             'Cook until golden brown in a waffle iron. Serve with butter and Wilted Greens or Honey.'
         ],
         recipeYield: '',
-        rating: 4,
+        rating: 0,
         votes: 0
     },{
         author: "Joshua Lane",
@@ -62,7 +62,7 @@
             "Includes textured dinosaur mode.",
             "Can be viewed and rotated in 3D."
         ],
-        rating: 3,
+        rating: 0,
         votes: 0
     },]
     
