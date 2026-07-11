@@ -44,6 +44,23 @@
         ],
         recipeYield: '',
         rating: 4
+    },{
+        author: "Joshua Lane",
+        category: "Transformers",
+        type: "3D Model",
+        datePublished: "2026-07-01",
+        tags: ["Transformers", "Dinobot", "Grimlock"],
+        description: "3D model of Grimlock in his dinosaur form.",
+        image: "./FinalProjectImage/grimlock-preview.jpg",
+        model: "./models/Grimlock.glb",
+        name: "Grimlock",
+        timeSpent: "2 weeks",
+        details: [
+            "Created in Blender.",
+            "Includes textured dinosaur mode.",
+            "Can be viewed and rotated in 3D."
+        ],
+        rating: 5
     },]
     
     
