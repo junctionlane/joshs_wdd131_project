@@ -71,6 +71,14 @@ h2 {
 }
 
 /* Search */
+.star {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
 
 .search {
     display: flex;

@@ -20,7 +20,8 @@
             'Cook until golden brown in a waffle iron. Serve with butter and Wilted Greens or Honey.'
         ],
         recipeYield: '6 waffles',
-        rating: 3
+        rating: 5,
+        votes: 0
     },
     {
         author: 'Provo High Culinary Students',
@@ -43,7 +44,8 @@
             'Cook until golden brown in a waffle iron. Serve with butter and Wilted Greens or Honey.'
         ],
         recipeYield: '',
-        rating: 4
+        rating: 4,
+        votes: 0
     },{
         author: "Joshua Lane",
         category: "Transformers",
@@ -60,7 +62,8 @@
             "Includes textured dinosaur mode.",
             "Can be viewed and rotated in 3D."
         ],
-        rating: 3
+        rating: 3,
+        votes: 0
     },]
     
     
