@@ -53,7 +53,7 @@ function recipeTemplate(recipe) {
     `;
 }
 
-// Displays recipes
+// Displays artworkprojects
 function renderRecipes(recipeList) {
     const container = document.querySelector("#recipe-container");
 
@@ -62,11 +62,11 @@ function renderRecipes(recipeList) {
         .join("");
 }
 
-// Filters recipes
+// Filters artworkprojects
 function filterRecipes(query) {
     query = query.toLowerCase();
 
-    return recipes.filter(recipe => {
+    return artworkprojects.filter(recipe => {
 
         const tags = recipe.tags.join(" ").toLowerCase();
 
@@ -98,12 +98,12 @@ document.querySelector("#searchBtn").addEventListener("click", () => {
         renderRecipes(filtered);
     } else {
         document.querySelector("#recipe-container").innerHTML =
-            "<p>No recipes found.</p>";
+            "<p>No artworkprojects found.</p>";
     }
 
 });
 
 // Initial page load
 window.addEventListener("DOMContentLoaded", () => {
-    renderRecipes([randomRecipe(recipes)]);
+    renderRecipes([randomRecipe(artworkprojects)]);
 });

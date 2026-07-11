@@ -101,9 +101,9 @@ h2 {
     width: 24px;
 }
 
-/* Recipe Card */
+/* artwork Card */
 
-.recipe-card {
+.artwork-card {
     display: flex;
     flex-direction: column;
     border: 1px solid #999;
@@ -111,13 +111,13 @@ h2 {
     overflow: hidden;
 }
 
-.recipe-card img {
+.artwork-card img {
     width: 100%;
     display: block;
     background-color:white ;
 }
 
-.recipe-info {
+.artwork-info {
     padding: 1rem;
 }
 
@@ -169,13 +169,13 @@ footer a {
 
 @media screen and (min-width: 700px) {
 
-    .recipe-card {
+    .artwork-card {
         flex-direction: row;
         align-items: flex-start;
         background-color: darkgreen;
     }
 
-    .recipe-card img {
+    .artwork-card img {
         width: 300px;
     }
 

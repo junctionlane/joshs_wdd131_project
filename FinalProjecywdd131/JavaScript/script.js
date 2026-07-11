@@ -1,7 +1,7 @@
 ﻿// Returns a random artwork
-function randomRecipe(recipes) {
-    const index = Math.floor(Math.random() * recipes.length);
-    return recipes[index];
+function randomArtwork(artworkprojects) {
+    const index = Math.floor(Math.random() * artworkprojects.length);
+    return artworkprojects[index];
 }
 
 
@@ -9,13 +9,13 @@ function randomRecipe(recipes) {
 function saveRatings() {
     localStorage.setItem(
         "ratings",
-        JSON.stringify(recipes)
+        JSON.stringify(artworkprojects)
     );
 }
 
 
 // Builds the star rating
-function ratingTemplate(recipe) {
+function ratingTemplate(artwork) {
 
     let stars = "";
 
@@ -24,9 +24,9 @@ function ratingTemplate(recipe) {
         stars += `
         <span 
             class="star"
-            data-name="${recipe.name}"
+            data-name="${artwork.name}"
             data-rating="${i}">
-            ${i <= recipe.rating ? "⭐" : "☆"}
+            ${i <= artwork.rating ? "⭐" : "☆"}
         </span>`;
     }
 
@@ -39,7 +39,7 @@ function updateLeaderboard(){
 
     const board = document.querySelector("#leaderboard");
 
-    let top = [...recipes]
+    let top = [...artworkprojects]
         .sort((a,b)=> {
             return (b.rating * b.votes) - (a.rating * a.votes);
         })
@@ -61,47 +61,47 @@ function updateLeaderboard(){
 
 
 // Creates HTML for one artwork
-function recipeTemplate(recipe) {
+function artworkTemplate(artwork) {
 
-    const tags = recipe.tags
+    const tags = artwork.tags
         .map(tag => `<span class="tag">${tag}</span>`)
         .join("");
 
 
     return `
-    <article class="recipe-card">
+    <article class="artwork-card">
 
 
-        ${recipe.model
+        ${artwork.model
         ? `
             <model-viewer
                 class="project-model"
-                src="${recipe.model}"
-                alt="${recipe.name}"
+                src="${artwork.model}"
+                alt="${artwork.name}"
                 camera-controls
                 auto-rotate>
             </model-viewer>
             `
         : `
-            <img src="${recipe.image}" alt="${recipe.name}">
+            <img src="${artwork.image}" alt="${artwork.name}">
         `
     }
 
 
-        <div class="recipe-info">
+        <div class="artwork-info">
 
             ${tags}
 
-            <h2>${recipe.name}</h2>
+            <h2>${artwork.name}</h2>
 
 
             <span class="rating">
-                ${ratingTemplate(recipe)}
+                ${ratingTemplate(artwork)}
             </span>
 
 
             <p class="description">
-                ${recipe.description}
+                ${artwork.description}
             </p>
 
         </div>
@@ -112,28 +112,28 @@ function recipeTemplate(recipe) {
 
 
 // Displays artwork
-function renderRecipes(recipeList) {
+function renderArtwork(artList) {
 
-    const container = document.querySelector("#recipe-container");
+    const container = document.querySelector("#artwork-container");
 
-    container.innerHTML = recipeList
-        .map(recipe => recipeTemplate(recipe))
+    container.innerHTML = artList
+        .map(artwork => artworkTemplate(artwork))
         .join("");
 }
 
 
 // Filters artwork
-function filterRecipes(query) {
+function filterArtwork(query) {
 
     query = query.toLowerCase();
 
-    return recipes.filter(recipe => {
+    return artworkprojects.filter(artwork => {
 
-        const tags = recipe.tags.join(" ").toLowerCase();
+        const tags = artwork.tags.join(" ").toLowerCase();
 
         return (
-            recipe.name.toLowerCase().includes(query) ||
-            recipe.description.toLowerCase().includes(query) ||
+            artwork.name.toLowerCase().includes(query) ||
+            artwork.description.toLowerCase().includes(query) ||
             tags.includes(query)
         );
     });
@@ -141,9 +141,9 @@ function filterRecipes(query) {
 
 
 // Sort alphabetically
-function sortRecipes(recipeList) {
+function sortArtwork(artworkList) {
 
-    return recipeList.sort((a,b)=>
+    return artworkList.sort((a, b)=>
         a.name.localeCompare(b.name)
     );
 }
@@ -156,19 +156,19 @@ document.querySelector("#searchBtn")
         const query = document.querySelector("#search").value;
 
 
-        let filtered = filterRecipes(query);
+        let filtered = filterArtwork(query);
 
 
-        filtered = sortRecipes(filtered);
+        filtered = sortArtwork(filtered);
 
 
         if(filtered.length > 0){
 
-            renderRecipes(filtered);
+            renderArtwork(filtered);
 
         } else {
 
-            document.querySelector("#recipe-container").innerHTML =
+            document.querySelector("#artwork-container").innerHTML =
                 "<p>No Artwork found.</p>";
 
         }
@@ -190,7 +190,7 @@ document.addEventListener("click",(event)=>{
         );
 
 
-        const artwork = recipes.find(
+        const artwork = artworkprojects.find(
             item => item.name === name
         );
 
@@ -212,7 +212,7 @@ document.addEventListener("click",(event)=>{
         saveRatings();
 
 
-        renderRecipes([artwork]);
+        renderArtwork([artwork]);
 
 
         updateLeaderboard();
@@ -231,13 +231,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     if(saved){
 
-        recipes = JSON.parse(saved);
+        artworkprojects = JSON.parse(saved);
 
     }
 
 
-    renderRecipes([
-        randomRecipe(recipes)
+    renderArtwork([
+        randomArtwork(artworkprojects)
     ]);
 
 
