@@ -51,7 +51,7 @@
         datePublished: "2026-07-01",
         tags: ["Transformers", "Dinobot", "Grimlock"],
         description: "3D model of Grimlock in his dinosaur form.",
-        image: "./FinalProjectImage/grimlock-preview.jpg",
+        image: "./FinalProjectImage/Neon.png",
         model: "./models/Grimlock.glb",
         name: "Grimlock",
         timeSpent: "2 weeks",
@@ -60,7 +60,7 @@
             "Includes textured dinosaur mode.",
             "Can be viewed and rotated in 3D."
         ],
-        rating: 5
+        rating: 3
     },]
     
     
