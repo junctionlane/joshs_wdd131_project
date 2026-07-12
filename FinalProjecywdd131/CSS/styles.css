@@ -172,7 +172,7 @@ footer a {
     .artwork-card {
         flex-direction: row;
         align-items: flex-start;
-        background-color: darkgreen;
+        background-color: #ffffff;
     }
 
     .artwork-card img {
