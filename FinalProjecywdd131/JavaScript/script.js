@@ -83,7 +83,7 @@ function artworkTemplate(artwork) {
             </model-viewer>
             `
         : `
-            <img src="${artwork.image}" alt="${artwork.name}">
+            <img src="${artwork.image}" alt="${artwork.name}" loading="lazy" width="500" height="400">
         `
     }
 
