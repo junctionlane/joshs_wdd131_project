@@ -79,7 +79,6 @@ function artworkTemplate(artwork) {
                 src="${artwork.model}"
                 alt="${artwork.name}"
                 loading="lazy"
-                reveal="interaction"
                 camera-controls
                 auto-rotate>
             </model-viewer>
