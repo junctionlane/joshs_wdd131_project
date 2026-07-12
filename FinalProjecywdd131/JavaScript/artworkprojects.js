@@ -2,7 +2,7 @@
     {
         tags: ['FN@F', 'Custom Oc', 'Animatronic'],
         description: 'A Fnaf character of my own creation, Most commonly known on the VRC platform',
-        image: './FinalProjectImage/image-195.png',
+        image: './FinalProjectImage/image-195.jpg',
         name: 'Glamrock DJ MusicMan',
         prepTime: '2 days',
         rating: 0,
