@@ -2,7 +2,7 @@
     {
         tags: ['FN@F', 'Custom Oc', 'Animatronic'],
         description: 'A Fnaf character of my own creation, Most commonly known on the VRC platform',
-        image: './FinalProjectImage/image-195.webp',
+        image: 'FinalProjectImage/image-195.webp',
         name: 'Glamrock DJ MusicMan',
         prepTime: '2 days',
         rating: 0,
@@ -11,7 +11,7 @@
     {
         tags: ['StarWars', 'Custom Oc', 'Droid'],
         description: 'ExtraInformation',
-        image: './FinalProjectImage/image-9(1).webp',
+        image: 'FinalProjectImage/image-9(1).webp',
         name: 'Droid',
         prepTime: '5 days',
         rating: 0,
