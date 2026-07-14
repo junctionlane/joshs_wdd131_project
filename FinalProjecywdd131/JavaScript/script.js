@@ -1,4 +1,22 @@
-﻿// Returns a random artwork
+﻿// Loads the model-viewer library only when needed
+let modelViewerLoading = false;
+
+function ensureModelViewer() {
+    // Already loaded or currently loading — do nothing
+    if (customElements.get('model-viewer') || modelViewerLoading) {
+        return;
+    }
+
+    modelViewerLoading = true;
+
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js';
+    document.head.appendChild(script);
+}
+
+
+// Returns a random artwork
 function randomArtwork(artworkprojects) {
     const index = Math.floor(Math.random() * artworkprojects.length);
     return artworkprojects[index];
@@ -61,7 +79,7 @@ function updateLeaderboard(){
 
 
 // Creates HTML for one artwork
-function artworkTemplate(artwork) {
+function artworkTemplate(artwork, eager = false) {
 
     const tags = artwork.tags
         .map(tag => `<span class="tag">${tag}</span>`)
@@ -84,7 +102,9 @@ function artworkTemplate(artwork) {
             </model-viewer>
             `
         : `
-            <img src="${artwork.image}" alt="${artwork.name}" loading="lazy" width="500" height="400">
+            <img src="${artwork.image}" alt="${artwork.name}" 
+                ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} 
+                width="500" height="400">
         `
     }
 
@@ -114,6 +134,11 @@ function artworkTemplate(artwork) {
 
 // Displays artwork
 function renderArtwork(artList) {
+
+    // Load model-viewer if any artwork in this batch needs it
+    if (artList.some(artwork => artwork.model)) {
+        ensureModelViewer();
+    }
 
     const container = document.querySelector("#artwork-container");
 
@@ -225,29 +250,14 @@ document.addEventListener("click",(event)=>{
 
 // Initial page load optimized to reduce Total Blocking Time
 window.addEventListener("DOMContentLoaded", () => {
-
-    // Chunk 1: Parse localStorage safely
-    setTimeout(() => {
-        const saved = localStorage.getItem("ratings");
-        if (saved) {
-            try {
-                artworkprojects = JSON.parse(saved);
-            } catch (e) {
-                console.error("Error parsing saved ratings", e);
-            }
+    const saved = localStorage.getItem("ratings");
+    if (saved) {
+        try {
+            artworkprojects = JSON.parse(saved);
+        } catch (e) {
+            console.error("Error parsing saved ratings", e);
         }
-
-        // Chunk 2: Defer initial card rendering to the next execution cycle
-        setTimeout(() => {
-            renderArtwork([
-                randomArtwork(artworkprojects)
-            ]);
-        }, 0);
-
-        // Chunk 3: Defer the DOM-heavy leaderboard generation
-        setTimeout(() => {
-            updateLeaderboard();
-        }, 20);
-
-    }, 0);
+    }
+    renderArtwork([randomArtwork(artworkprojects)], true);
+    updateLeaderboard();
 });
