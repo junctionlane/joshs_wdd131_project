@@ -102,9 +102,9 @@ function artworkTemplate(artwork, eager = false) {
             </model-viewer>
             `
         : `
-            <img src="${artwork.image}" alt="${artwork.name}" 
-                ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} 
-                width="500" height="400">
+         <img src="${artwork.image}" alt="${artwork.name}" 
+         ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} 
+         width="500" height="400">
         `
     }
 
@@ -248,7 +248,6 @@ document.addEventListener("click",(event)=>{
 });
 
 
-// Initial page load optimized to reduce Total Blocking Time
 window.addEventListener("DOMContentLoaded", () => {
     const saved = localStorage.getItem("ratings");
     if (saved) {

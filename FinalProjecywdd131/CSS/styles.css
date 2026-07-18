@@ -1,33 +1,34 @@
-﻿* {
+﻿﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 nav {
-    background-color: var(--nav-background-color);
+    display: flex;
+    list-style-type: none;
+    background-color: #ffffff;
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;
 }
-nav {
-    list-style-type: none;
-    display: flex;
-    background-color: #ffffff;
-}
+
 nav a {
     padding: 1em;
     min-width: 120px;
     text-decoration: none;
-    padding: 10px;
 }
+
 nav a:link,
 nav a:visited {
     color: black;
 }
+
 nav a:hover {
     color: yellow;
     background-color: var(--nav-hover-background-color);
 }
+
 .project-model {
     width: 100%;
     height: 300px;
@@ -62,7 +63,6 @@ h2 {
 
 h1 {
     font-size: 4rem;
-    
 }
 
 h2 {
@@ -71,6 +71,7 @@ h2 {
 }
 
 /* Search */
+
 .star {
     cursor: pointer;
     font-size: 1.5rem;
@@ -83,7 +84,6 @@ h2 {
 .search {
     display: flex;
     margin-bottom: 1rem;
-    
 }
 
 .search input {
@@ -101,7 +101,7 @@ h2 {
     width: 24px;
 }
 
-/* artwork Card */
+/* Artwork Card */
 
 .artwork-card {
     display: flex;
@@ -115,7 +115,7 @@ h2 {
     width: 100%;
     height: 100%;
     display: block;
-    background-color:white ;
+    background-color: white;
 }
 
 .artwork-info {
@@ -177,8 +177,8 @@ footer a {
     }
 
     .artwork-card img {
-        width: 300px;
-        height: 300px;
+        width: 50%;
+        height: 50%;
     }
 
     .description {
@@ -188,5 +188,38 @@ footer a {
     footer {
         flex-direction: row;
         justify-content: space-between;
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 699px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    header img {
+        width: 140px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+
+    nav a {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
     }
 }
